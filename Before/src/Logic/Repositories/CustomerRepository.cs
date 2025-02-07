@@ -16,16 +16,10 @@ namespace Logic.Repositories
         {
             return _unitOfWork
                 .Query<Customer>()
-                .ToList()
-                .Select(x =>
-                {
-                    x.PurchasedMovies = null;
-                    return x;
-                })
                 .ToList();
         }
 
-        public Customer GetByEmail(string email)
+        public Customer GetByEmail(Email email)
         {
             return _unitOfWork
                 .Query<Customer>()
